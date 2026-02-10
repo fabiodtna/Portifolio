@@ -3,16 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Fabio Silva - GR4lph</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body id="bodystyle">
+      <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const carrossel = document.getElementById("carrosel-projet");
+
+            let scroll = 0;
+            const velocidade = 0.2; 
+            function animar() {
+              scroll += velocidade;
+              carrossel.style.transform = `translateX(-${scroll}px)`;
+
+              if (scroll >= carrossel.scrollWidth / 2) {
+                scroll = 0;
+              }
+
+              requestAnimationFrame(animar);
+            }
+            carrossel.innerHTML += carrossel.innerHTML;
+
+            animar();
+          });
+      </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <div id="linha-vertical"></div>
     <div class="container">
       <div class="row" id="header">
-          <h3 class="col-sm-7">Fabio Silva</h3>
+          <h3 class="col-sm-7" id="headerNome">Fabio Silva</h3>
           <div id="headerDop" class="col-sm-5">
             <span id="headerop">Home</span>
             <span id="headerop">About Me</span>
@@ -20,32 +42,127 @@
           </div>
       </div>
       <div id="linha-horizontal"></div>
-      <div class="home">
+      <div id="homedivall" class="row">
         <div id="home"  class="col-sm-6">
           <div id="homeTi" class="col-sm-5">
-            <h2>Full Stack Dev</h2>
-            <h4>Powered By Curiosity</h4>
-            <div id="homebtn">
-              <p>Hire me</p>
-              <p>Download CV</p>
+            <div id="homeicon" >
+             <img src="./icon.png" alt="Logotipo da empresa" width="300" height="150">
+              <div class="col-sm-10" id="divghometxtbtn">
+                <h2 id="hometxt1">Full Stack Dev</h2>
+                <h4 id="hometxt2">Powered By Curiosity</h4>
+                   <div id="homebtn">
+                    <p id="hometxtbtn1">Hire me</p>
+                    <p id="hometxtbtn2">Download CV</p>
+                  </div>
+              </div>
+            </div>
+
+            <div id="homeseta"> 
+              <i  id="homeiconseta" class="fa-solid fa-arrow-down fa-2x"></i>
+            </div>
+
+          </div>
+        </div>
+        <div  id="homeDimg"  class="col-sm-6" >
+           <img id="imagehome" src="./home.png" class="img-fluid" alt="Responsive image">
+        </div>
+      </div>
+      <div id="sobrediv" class="sobre">
+          <div id="subdivsobre">
+              <div id="titletxtsobre">
+               <h3>About <span id="sobretxtme">Me</span></h3>
+              </div>
+               <p id="txtsobre" >
+                Hello, my name is Fabio and I am a full-stack developer with experience in systems development. I enjoy building efficient and practical solutions, focusing on backend and system logic rather than design or building front-end from scratch. I am always looking to improve my skills and learn new technologies. I have a strong interest in cybersecurity and software development, especially in understanding how systems work and why vulnerabilities happen.
+              </p>
+          </div>
+          <diV id="subdivsobreimg">
+        
+           <img src="./imgabout.png" class="img-fluid" alt="Responsive image">
+      
+          </diV>
+      </div>
+      <div id="divprojetos" class="Projetos">
+        <div id="subdivproje">   
+          <div>
+            <h3 id="txtsobreme1">My <span id="sobretxtme">Projects</span></h3>
+          </div>
+          <div id="subdivproop">
+            <span id="suboproptions">All</span> 
+            <span id="suboproptions">Back-End</span>
+            <span id="suboproptions">Front-End</span> 
+            <span id="suboproptions">Cyber-Security</span> 
+          </div>
+          <div id="subdivprojetok">
+            <div class="carrossel-container">
+              <ul id="carrosel-projet">
+                <li class="slide">
+                  <img src="https://picsum.photos/300/300?image=8">
+                  <p>Projeto 1</p>
+                </li>
+                <li class="slide">
+                  <img src="https://picsum.photos/300/300?image=0">
+                  <p>Projeto 2</p>
+                </li>
+                <li class="slide">
+                  <img src="https://picsum.photos/300/300?image=6">
+                  <p>Projeto 3</p>
+                </li>
+                <li class="slide">
+                  <img src="https://picsum.photos/300/300?image=1">
+                  <p>Projeto 4</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div  class="col-sm-6">
-            <img src="imagemmmm" alt="">
+      </div>
+      <div id="linha-horizontal"></div>
+      <div id="divcontac" class="contatos">
+        <div id="div1contact">
+         <h3 id="titlecontac1">Got a Project</h3>
+         <h3 id="titlecontac2">in mind?</h3>
+        </div>
+        <div  id="div2contact">
+          <form method="post" id="contform">
+            <div id="divcontNE">
+               <div>
+                  <input placeholder="Name: " id="inpcontnome" />
+                </div>
+                <div>
+                  <input placeholder="Email" id="inpcontemail" />
+                </div>
+            </div>
+            <div id="divcontMsg">
+              <textarea id="contmsg" placeholder="Menssage:"></textarea>
+            </div>
+            <div id="divbtnsend">
+               <button id="btnsendform">
+                  <span id="txtbtnform">send message <i class="fa-brands fa-hubspot fa-md"></i></span>
+                </button>
+            </div>
+           
+          </form>
         </div>
       </div>
-      <div class="sobre">
-        Sobre
+      <div id="divbottom">
+          <div id="divbotmenulink">
+              <div>
+                <span id="txtbotmelink"><i id="txtbotmelinkicon" class="fa-solid fa-house fa-md white"></i> Home</span>
+                <span id="txtbotmelink"><i id="txtbotmelinkicon" class="fa-solid fa-user fa-md white"></i> About Me</span>
+                <span id="txtbotmelink"><i id="txtbotmelinkicon" class="fa-solid fa-phone fa-md white"></i> Contact</span>
+              </div>
+              <div id="divbtnbottom">
+                <i id="btnicons" class="fa-brands fa-facebook fa-md"></i>
+                <i id="btnicons" class="fa-brands fa-instagram fa-md"></i>
+                <i id="btnicons" class="fa-brands fa-github fa-md"></i>
+                <i id="btnicons" class="fa-brands fa-linkedin fa-md"></i>
+              </div>
+          </div>
       </div>
-      <div id="linha-horizontal"></div>
-      <div class="Projetos">
-        Projetos
-      </div>
-      <div id="linha-horizontal"></div>
-      <div class="contatos">
-        Contatos
-      </div>
+          <div id="divterms">
+            <p>Terms of Service - Privacy Policy - GR4lph</p>
+          </div>
     </div>
   </body>
 </html>
