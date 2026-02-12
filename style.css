@@ -27,11 +27,11 @@
   z-index: 9999; 
 }
 #linha-vertical {
-  position: absolute;    
+  position: fixed;    
   top: 0;
   left: 35%;        
   width: 1px;         
-  height:265vh;     
+  height:100%;     
   background-color: var(--cor-linha);
   z-index: 9999;      
 }
@@ -52,10 +52,12 @@
   margin: 10px;
   font-size: medium;
   font-weight: 500;
+  color: var(--cor-letra);
+  text-decoration: none;
 }
 #home{
   display: flex;
-  height: 60vw;
+  height: 50vw;
   justify-content: center;
   align-items: center;
 }
@@ -123,6 +125,7 @@
   display: flex;
   justify-content: center; 
   margin-top: 30%;
+  text-decoration: none;
 }
 #homeiconseta{
   display: flex;
@@ -147,7 +150,7 @@
   flex-direction: column;
   width: 50%;
   justify-content: center;
-  background-image: url('./fundosobre.png');
+  background-image: url('./img/fundosobre.png');
   background-size: contain;  
 }
 
@@ -181,7 +184,7 @@
   justify-content: center;
   width: 100%;
   height: 70vh;
-  background-image: url('./fundoproje.png');
+  background-image: url('./img/fundoproje.png');
   background-size: contain;
 
 }
@@ -245,7 +248,7 @@
 #div1contact{
   width: 40%;
   height: 350px;
-  background-image: url('./contact.png');
+  background-image: url('./img/contact.png');
   background-size: cover;
 }
 #titlecontac1{
@@ -342,6 +345,8 @@
   color: var(--cor-letra);
   font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   padding: 10px;
+  color: var(--cor-letra);
+  text-decoration: none;
 }
 #txtbotmelinkicon{
   color: var(--cor-letra);
